@@ -60,7 +60,7 @@ jobs:
           develocity-access-key: ${{ secrets.DEVELOCITY_ACCESS_KEY }}
           gradle-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
       - name: Build ${{ inputs.ref }} with Gradle
-        run: ./gradlew build --continue --no-configuration-cache
+        run: ./gradlew build --continue --configuration-cache
       - id: should-deploy-artifacts
         name: Check Deploy Artifacts using Secrets
         if: ${{ runner.os == 'Linux' }}
